@@ -55,6 +55,7 @@ RUN \
   apk del --purge \
     build-dependencies && \
   rm -rf \
+    /root/.composer \
     /root/.cache \
     /tmp/*
 
