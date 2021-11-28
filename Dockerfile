@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.15-php8
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.15
 
 # set version label
 ARG BUILD_DATE
@@ -29,7 +29,7 @@ RUN \
     php8-zip && \
   echo "**** install composer ****" && \
   php8 -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-  php8 composer-setup.php --install-dir=/tmp --filename=composer && \
+  php8 composer-setup.php --install-dir=/usr/local/bin/composer --filename=composer && \
   echo "**** install grocy ****" && \
   mkdir -p /app/www && \
   if [ -z ${GROCY_RELEASE+x} ]; then \
@@ -45,7 +45,7 @@ RUN \
   cp -R /app/www/data/plugins \
     /defaults/plugins && \
   echo "**** install composer packages ****" && \
-  php8 /tmp/composer install -d /app/www --no-dev && \
+  composer install -d /app/www --no-dev && \
   echo "**** install yarn packages ****" && \
   cd /app/www && \
   yarn --production && \
