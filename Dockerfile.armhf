@@ -29,7 +29,7 @@ RUN \
     php8-zip && \
   echo "**** install composer ****" && \
   php8 -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-  php8 composer-setup.php --install-dir=/usr/local/bin/composer --filename=composer && \
+  php8 composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
   echo "**** install grocy ****" && \
   mkdir -p /app/www && \
   if [ -z ${GROCY_RELEASE+x} ]; then \
