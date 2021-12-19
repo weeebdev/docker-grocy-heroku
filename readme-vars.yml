@@ -39,7 +39,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "05.12.21:", desc: "Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes in base](https://github.com/linuxserver/docker-baseimage-alpine-nginx/pull/84))." }
+  - { date: "19.12.21:", desc: "Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes in base](https://github.com/linuxserver/docker-baseimage-alpine-nginx/pull/84))." }
   - { date: "22.08.21:", desc: "Rebase to Alpine 3.14 and PHP 8." }
   - { date: "25.07.21:", desc: "Add 'int','json' and 'zlib' PHP extensions." }
   - { date: "10.05.21:", desc: "Reduce image size." }
