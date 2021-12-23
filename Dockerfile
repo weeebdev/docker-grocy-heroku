@@ -10,6 +10,7 @@ LABEL maintainer="alex-phillips, homerr"
 RUN \
   echo "**** install build packages ****" && \
   apk add --no-cache --virtual=build-dependencies \
+    composer \
     git \
     yarn && \
   echo "**** install runtime packages ****" && \
@@ -27,9 +28,6 @@ RUN \
     php8-phar \
     php8-tokenizer \
     php8-zip && \
-  echo "**** install composer ****" && \
-  php8 -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-  php8 composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
   echo "**** install grocy ****" && \
   mkdir -p /app/www && \
   if [ -z ${GROCY_RELEASE+x} ]; then \
