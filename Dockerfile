@@ -62,5 +62,5 @@ RUN \
 COPY root/ /
 
 # ports and volumes
-EXPOSE 80
-VOLUME /config
+EXPOSE $PORT
+# VOLUME /config

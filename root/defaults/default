@@ -1,5 +1,5 @@
 server {
-  listen 80 default_server;
+  listen $PORT default_server;
   listen 443 ssl;
   root /app/grocy/public;
   index index.php index.html index.htm;
